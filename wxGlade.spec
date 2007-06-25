@@ -1,6 +1,6 @@
 %define name wxGlade
-%define version 0.4.1
-%define release %mkrel 2
+%define version 0.5
+%define release %mkrel 1
 
 Name:		%{name}
 Summary:	A GUI builder for wxWindows/wxPython
@@ -10,7 +10,8 @@ License:	MIT
 Group:		Development/Other
 URL:		http://wxglade.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/wxglade/%{name}-%{version}.tar.bz2
-Requires:	wxPython >= 2.3.2.1
+Requires:	python >= 2.3
+Requires:	wxPython >= 2.6
 BuildRequires:	ImageMagick
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildArch:	noarch
