@@ -63,7 +63,6 @@ Icon=%{name}
 Terminal=false
 Type=Application
 Categories=X-MandrivaLinux-MoreApplications-Development-Tools;GUIDesigner;
-Encoding=UTF-8
 EOF
 
 convert -resize 32x32 icons/icon.xpm %{buildroot}/%{_iconsdir}/%{name}.png
