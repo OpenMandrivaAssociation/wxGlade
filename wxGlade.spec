@@ -13,7 +13,6 @@ Source:		http://prdownloads.sourceforge.net/wxglade/%{name}-%{version}.tar.bz2
 Requires:	python >= 2.3
 Requires:	wxPython >= 2.6
 BuildRequires:	ImageMagick
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildArch:	noarch
 
 %description
