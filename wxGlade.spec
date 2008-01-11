@@ -39,19 +39,12 @@ is the right tool.
 rm -Rf %{buildroot}
 mkdir -p %{buildroot}/%{_datadir}/%{name}
 mkdir -p %{buildroot}/%{_bindir}
-mkdir -p %{buildroot}/%{_menudir}
 mkdir -p %{buildroot}/{%{_iconsdir},%{_miconsdir},%{_liconsdir}}
 install *.py* %{buildroot}/%{_datadir}/%{name}
 cp -a docs icons codegen widgets edit_sizers %{buildroot}/%{_datadir}/%{name}
 install license.txt credits.txt %{buildroot}/%{_datadir}/%{name}
 echo -e "#!/bin/sh\npython %{_datadir}/%{name}/wxglade.py "\$@"" > %{buildroot}/%{_bindir}/wxglade
 
-cat << EOF > $RPM_BUILD_ROOT/%{_menudir}/%{name}
-?package(%{name}):command="%{_bindir}/wxglade" icon="%{name}.png" \
-needs="X11" section="More Applications/Development/Tools" title="%{name}" \
-longtitle="A GUI builder for wxWindows/wxPython" \
-xdg="true"
-EOF
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -83,7 +76,6 @@ rm -rf %buildroot
 %{_datadir}/%{name}
 %attr(755,root,root) %{_bindir}/*
 %doc *.txt 
-%{_menudir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
