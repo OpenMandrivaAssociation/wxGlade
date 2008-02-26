@@ -1,5 +1,5 @@
 %define name wxGlade
-%define version 0.6.2
+%define version 0.6.3
 %define release %mkrel 1
 
 Name:		%{name}
@@ -9,7 +9,7 @@ Release:	%{release}
 License:	MIT
 Group:		Development/Other
 URL:		http://wxglade.sourceforge.net/
-Source:		http://prdownloads.sourceforge.net/wxglade/%{name}-%{version}.tar.bz2
+Source:		http://prdownloads.sourceforge.net/wxglade/%{name}-%{version}.tar.lzma
 Requires:	python >= 2.3
 Requires:	wxPython >= 2.6
 BuildRequires:	ImageMagick
