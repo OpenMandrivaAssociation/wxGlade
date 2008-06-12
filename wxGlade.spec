@@ -65,11 +65,15 @@ convert -resize 48x48 icons/icon.xpm %{buildroot}/%{_liconsdir}/%{name}.png
 %clean
 rm -rf %buildroot
 
+%if %mdkversion < 200900
 %post
 %{update_menus}
+%endif
 
+%if %mdkversion < 200900
 %postun
 %{clean_menus}
+%endif
 
 %files
 %defattr(-,root,root,-)
