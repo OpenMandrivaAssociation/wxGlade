@@ -1,6 +1,6 @@
 %define name wxGlade
 %define version 0.6.3
-%define release %mkrel 3
+%define release %mkrel 4
 
 Name:		%{name}
 Summary:	A GUI builder for wxWindows/wxPython
