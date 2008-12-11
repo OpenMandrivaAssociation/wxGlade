@@ -12,7 +12,7 @@ URL:		http://wxglade.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/wxglade/%{name}-%{version}.tar.lzma
 Requires:	python >= 2.3
 Requires:	wxPython >= 2.6
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildArch:	noarch
 
