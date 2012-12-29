@@ -1,19 +1,16 @@
 %define name wxGlade
-%define version 0.6.3
-%define release %mkrel 5
 
 Name:		%{name}
 Summary:	A GUI builder for wxWindows/wxPython
-Version:	%{version}
-Release:	%{release}
+Version:	0.6.5
+Release:	1
 License:	MIT
 Group:		Development/Other
 URL:		http://wxglade.sourceforge.net/
-Source:		http://prdownloads.sourceforge.net/wxglade/%{name}-%{version}.tar.lzma
+Source:		https://sourceforge.net/projects/wxglade/files/wxglade/0.6.5/%{name}-%{version}.tar.gz
 Requires:	python >= 2.3
 Requires:	wxPython >= 2.6
 BuildRequires:	imagemagick
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildArch:	noarch
 
 %description
@@ -36,7 +33,6 @@ is the right tool.
 %build
 
 %install 
-rm -Rf %{buildroot}
 mkdir -p %{buildroot}/%{_datadir}/%{name}
 mkdir -p %{buildroot}/%{_bindir}
 mkdir -p %{buildroot}/{%{_iconsdir},%{_miconsdir},%{_liconsdir}}
@@ -61,19 +57,6 @@ EOF
 convert -resize 32x32 icons/icon.xpm %{buildroot}/%{_iconsdir}/%{name}.png
 convert -resize 16x16 icons/icon.xpm %{buildroot}/%{_miconsdir}/%{name}.png
 convert -resize 48x48 icons/icon.xpm %{buildroot}/%{_liconsdir}/%{name}.png
-
-%clean
-rm -rf %buildroot
-
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%endif
 
 %files
 %defattr(-,root,root,-)
@@ -152,4 +135,5 @@ rm -rf %buildroot
 
 * Sun Aug 15 2004 Buchan Milne <bgmilne@linux-mandrake.com> 0.3.3-1mdk
 - 0.3.3
+
 
