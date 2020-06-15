@@ -45,7 +45,7 @@ is the right tool.
 %{_docdir}/wxglade/
 %{_bindir}/wxglade
 %{python_sitelib}/wxglade*
-%{_iconsdir}/*
+%{_datadir}/icons/wxglade*
 %{_datadir}/wxglade/templates/CustomWidget_AGW_SpeedMeter.wgt
 %{_datadir}/wxglade/templates/Dialog_with_two_buttons.wgt
 
