@@ -7,10 +7,14 @@ Release:	2
 License:	MIT
 Group:		Development/Other
 URL:		http://wxglade.sourceforge.net/
-Source:		https://sourceforge.net/projects/wxglade/files/wxglade/0.6.5/%{name}-%{version}.tar.gz
-Requires:	python >= 2.3
-Requires:	wxPython >= 2.6
-BuildRequires:	imagemagick
+Source:		https://downloads.sourceforge.net/project/wxglade/wxglade/%{version}/%{oname}-%{version}fix2.zip
+
+BuildRequires:  pkgconfig(python)
+BuildRequires:  python3dist(setuptools)
+
+Requires:	python
+Requires:	wxPython
+
 BuildArch:	noarch
 
 %description
@@ -28,48 +32,25 @@ If you are looking for a complete IDE, maybe Boa Constructor or PythonCard
 is the right tool.
 
 %prep
-%setup -q
+%autosetup -n %{oname}-%{version}
 
 %build
+%py_build
 
-%install 
-mkdir -p %{buildroot}/%{_datadir}/%{name}
-mkdir -p %{buildroot}/%{_bindir}
-mkdir -p %{buildroot}/{%{_iconsdir},%{_miconsdir},%{_liconsdir}}
-install *.py* %{buildroot}/%{_datadir}/%{name}
-cp -a docs icons codegen widgets edit_sizers %{buildroot}/%{_datadir}/%{name}
-install license.txt credits.txt %{buildroot}/%{_datadir}/%{name}
-echo -e "#!/bin/sh\npython %{_datadir}/%{name}/wxglade.py "\$@"" > %{buildroot}/%{_bindir}/wxglade
+%install
+%py_install
 
-
-mkdir -p %{buildroot}%{_datadir}/applications
-cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
-[Desktop Entry]
-Name=%{name}
-Comment=A GUI builder for wxWindows/wxPython
-Exec=%{_bindir}/wxglade
-Icon=%{name}
-Terminal=false
-Type=Application
-Categories=X-MandrivaLinux-MoreApplications-Development-Tools;GUIDesigner;
-EOF
-
-convert -resize 32x32 icons/icon.xpm %{buildroot}/%{_iconsdir}/%{name}.png
-convert -resize 16x16 icons/icon.xpm %{buildroot}/%{_miconsdir}/%{name}.png
-convert -resize 48x48 icons/icon.xpm %{buildroot}/%{_liconsdir}/%{name}.png
 
 %files
-%defattr(-,root,root,-)
-%{_datadir}/%{name}
-%attr(755,root,root) %{_bindir}/*
-%doc *.txt 
-%{_datadir}/applications/mandriva-%{name}.desktop
-%{_iconsdir}/%{name}.png
-%{_miconsdir}/%{name}.png
-%{_liconsdir}/%{name}.png
-
-
-
+%{_docdir}/%{name}/
+%license LICENSE.txt
+%{_bindir}/%{name}*
+%{_iconsdir}/hicolor/*x*/apps/*
+%{_datadir}/applications/*
+%{_datadir}/%{name}/
+%{_mandir}/man1/%{name}.1*
+%{python_sitelib}/%{name}/
+%{python_sitelib}/%{oname}-%{version}-py%{python_version}.egg-info
 
 %changelog
 * Wed Sep 09 2009 Thierry Vignaud <tvignaud@mandriva.com> 0.6.3-5mdv2010.0
