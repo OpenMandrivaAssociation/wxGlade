@@ -2,8 +2,8 @@
 
 Name:		%{name}
 Summary:	A GUI builder for wxWindows/wxPython
-Version:	0.6.5
-Release:	2
+Version:	0.9.6
+Release:	1
 License:	MIT
 Group:		Development/Other
 URL:		http://wxglade.sourceforge.net/
@@ -32,7 +32,7 @@ If you are looking for a complete IDE, maybe Boa Constructor or PythonCard
 is the right tool.
 
 %prep
-%autosetup -n %{oname}-%{version}
+%autosetup -n %{name}-%{version}
 
 %build
 %py_build
