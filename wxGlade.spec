@@ -42,15 +42,7 @@ is the right tool.
 
 
 %files
-%{_docdir}/%{name}/
-%license LICENSE.txt
-%{_bindir}/%{name}*
-%{_iconsdir}/hicolor/*x*/apps/*
-%{_datadir}/applications/*
-%{_datadir}/%{name}/
-%{_mandir}/man1/%{name}.1*
-%{python_sitelib}/%{name}/
-%{python_sitelib}/%{oname}-%{version}-py%{python_version}.egg-info
+
 
 %changelog
 * Wed Sep 09 2009 Thierry Vignaud <tvignaud@mandriva.com> 0.6.3-5mdv2010.0
