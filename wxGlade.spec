@@ -13,7 +13,7 @@ BuildRequires:  pkgconfig(python)
 BuildRequires:  python3dist(setuptools)
 
 Requires:	python
-#Requires:	wxPython
+Requires: python-wxpython4
 
 BuildArch:	noarch
 
