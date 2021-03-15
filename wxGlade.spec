@@ -7,7 +7,7 @@ Release:	1
 License:	MIT
 Group:		Development/Other
 URL:		http://wxglade.sourceforge.net/
-Source:		https://downloads.sourceforge.net/project/wxglade/wxglade/%{version}/%{name}-%{version}fix2.zip
+Source:		https://downloads.sourceforge.net/project/wxglade/wxglade/%{version}/%{name}-%{version}.zip
 
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python3dist(setuptools)
