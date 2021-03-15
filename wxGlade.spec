@@ -2,7 +2,7 @@
 
 Name:		%{name}
 Summary:	A GUI builder for wxWindows/wxPython
-Version:	0.9.6
+Version:	1.0.1
 Release:	1
 License:	MIT
 Group:		Development/Other
@@ -39,7 +39,6 @@ is the right tool.
 
 %install
 %py_install
-
 
 %files
 %{_docdir}/wxglade/
