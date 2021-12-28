@@ -2,7 +2,7 @@
 
 Name:		%{name}
 Summary:	A GUI builder for wxWindows/wxPython
-Version:	1.0.1
+Version:	1.0.3
 Release:	1
 License:	MIT
 Group:		Development/Other
