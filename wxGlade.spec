@@ -2,12 +2,12 @@
 
 Name:		%{name}
 Summary:	A GUI builder for wxWindows/wxPython
-Version:	1.0.3
+Version:	1.0.4
 Release:	1
 License:	MIT
 Group:		Development/Other
 URL:		http://wxglade.sourceforge.net/
-Source:		https://downloads.sourceforge.net/project/wxglade/wxglade/%{version}/%{name}-%{version}.zip
+Source:		https://downloads.sourceforge.net/project/wxglade/wxglade/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python3dist(setuptools)
