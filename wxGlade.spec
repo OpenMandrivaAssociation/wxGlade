@@ -3,7 +3,7 @@
 Name:		%{name}
 Summary:	A GUI builder for wxWindows/wxPython
 Version:	1.0.4
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Other
 URL:		http://wxglade.sourceforge.net/
