@@ -2,18 +2,19 @@
 
 Name:		%{name}
 Summary:	A GUI builder for wxWindows/wxPython
-Version:	1.0.4
-Release:	2
+Version:	1.0.5
+Release:	1
 License:	MIT
 Group:		Development/Other
-URL:		http://wxglade.sourceforge.net/
-Source:		https://downloads.sourceforge.net/project/wxglade/wxglade/%{version}/%{name}-%{version}.tar.gz
+URL:		https://wxglade.sourceforge.net/
+#Source0:		https://downloads.sourceforge.net/project/wxglade/wxglade/%{version}/%{name}-%{version}.tar.gz
+Source0:  https://github.com/wxGlade/wxGlade/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python3dist(setuptools)
 
 Requires:	python
-Requires: python-wxpython4
+Requires: python-wxpython
 
 BuildArch:	noarch
 
@@ -32,7 +33,7 @@ If you are looking for a complete IDE, maybe Boa Constructor or PythonCard
 is the right tool.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}-%{version} -p1
 
 %build
 %py_build
