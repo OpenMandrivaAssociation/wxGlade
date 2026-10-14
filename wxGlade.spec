@@ -5,18 +5,19 @@
 Name:		%{name}
 Summary:	A GUI builder for wxWindows/wxPython
 Version:	1.1.1
-Release:	2
+Release:	3
 License:	MIT
 Group:		Development/Other
 URL:		https://wxglade.sourceforge.net/
 #Source0:		https://downloads.sourceforge.net/project/wxglade/wxglade/%{version}/%{name}-%{version}.tar.gz
 Source0:  https://github.com/wxGlade/wxGlade/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
 
-BuildRequires:  pkgconfig(python)
-BuildRequires:  python3dist(setuptools)
+BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(setuptools)
 
 Requires:	python
-Requires: python-wxpython
+# 4.2.5-1 is the Python 3.14 module.
+Requires:	python-wxpython >= 4.2.5-2
 
 BuildArch:	noarch
 
